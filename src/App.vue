@@ -1,59 +1,42 @@
 <script setup>
-    
+import { ref } from 'vue';
 
-  </script>
+const user = ref({
+  id: 1,
+  avatar: 'https://www.w3schools.com/w3images/team2.jpg',
+  name: 'Mai Cong Thanh',
+  jobTitle: 'Software Engineer',
+  university: 'Industrial University'
+})
+
+
+// const click = () => {
+//   user.value.push({
+//     id: user.value.length + 1,
+//     name: 'new-item',
+//     location: 'new-location'
+//   })
+// }
+</script>
 
 <template>
+  <div>
     <h2 style="text-align:center">User Profile Card</h2>
 
-<div class="card">
-  <h1>John Doe</h1>
-  <p class="title">CEO & Founder, Example</p>
-  <p>Harvard University</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
+    <div class="card">
+      <img :src="user.avatar" alt="avatar" style="width:100%">
+      <h1>{{ user.name }}</h1>
+      <p>{{ user.jobTitle }}</p>
+      <p>{{ user.university }}</p>
+      <div style="margin: 24px 0;">
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+      </div>
+      <p><button>Contact</button></p>
+    </div>
   </div>
-  <p><button>Contact</button></p>
-</div>
 </template>
 
-<style scoped>
-    .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
+<style scoped></style>
